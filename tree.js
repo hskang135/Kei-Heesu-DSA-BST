@@ -181,17 +181,25 @@ function main() {
   //console.log(char);
 
 
-  //console.log(heightBST(num));
-  //console.log(heightBST(char));
-  console.log(IsitBST(char));
-
+  //console.log(heightBST(num)); 
+  //console.log(heightBST(char)); 
+  //console.log(IsitBST(char)); 
+  //console.log(thirdNode(char)); 
+  //console.log(thirdNode(num)); 
+  //console.log(balaced(num)) 
+  //console.log(balaced(char))
+  console.log(sameBST(num));
+  console.log(sameBST(char))
 }
 
 main();
 
 
+
 // #4 
 // This function will add all node values of given tree recursively.
+
+
 
 // #5
 function heightBST(tree) {
@@ -235,5 +243,50 @@ function IsitBST(tree) {
   return true;
 }; 
 
+
+
+// #7
+function thirdNode(tree) {
+  let curr = tree;
+
+  while(curr.right !== null) {
+    curr = curr.right
+  }
+
+  let parent = curr.parent;
+  if(curr.left !== null && parent.left !== null) {
+    return parent.key
+  }
+
+  if(parent.left !== null) {
+    let newNode = parent.left;
+    while(newNode.right !== null) {
+      newNode = newNode.right
+    }
+    return newNode;
+  }
+
+};
+
+
+
+// #8
+function balaced(tree) {
+  let left = heightBST(tree.left)
+  let right = heightBST(tree.right)
+
+  if(Math.abs(right - left) < 1) {
+    return true;
+  } else if(Math.abs(right - left) > 1) {
+    return false;
+  }
+};
+
+
+
+// #9
+function sameBST(tree) {
+
+};
 
 
