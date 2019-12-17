@@ -194,12 +194,12 @@ main();
 
 
 
-// #4 
+// #4 What does this program do?
 // This function will add all node values of given tree recursively.
 
 
 
-// #5
+// #5 Height of a BST
 function heightBST(tree) {
   let left = 0;
   let right = 0;
@@ -220,7 +220,7 @@ function heightBST(tree) {
 
 
 
-// #6
+// #6 Is it a BST?
 function IsitBST(tree) {
   if(tree.left) {
     if(tree.left.key < tree.key) {
@@ -243,7 +243,7 @@ function IsitBST(tree) {
 
 
 
-// #7
+// #7 3rd largest node
 function thirdNode(tree) {
   let curr = tree;
 
@@ -269,7 +269,7 @@ function thirdNode(tree) {
 
 
 
-// #8
+// #8 Balanced BST
 function balaced(tree) {
   let left = heightBST(tree.left);
   let right = heightBST(tree.right);
@@ -283,8 +283,7 @@ function balaced(tree) {
 
 
 
-// #9
-
+// #9 Are they the same BSTs?
 const arr1 = [3, 5, 4, 6, 1, 0, 2];
 const arr2 = [3, 1, 5, 2, 4, 6, 0];
 
@@ -307,7 +306,7 @@ function sameBST(arr1, arr2) {
   return true;
 };
 
-//console.log(sameBST(arr1, arr2));
-//console.log(sameBST(arr3, arr4));
+console.log(sameBST(arr1, arr2));
+console.log(sameBST(arr3, arr4));
 
 
