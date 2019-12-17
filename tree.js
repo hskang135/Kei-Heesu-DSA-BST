@@ -186,10 +186,8 @@ function main() {
   //console.log(IsitBST(char)); 
   //console.log(thirdNode(char)); 
   //console.log(thirdNode(num)); 
-  //console.log(balaced(num)) 
-  //console.log(balaced(char))
-  console.log(sameBST(num));
-  console.log(sameBST(char))
+  //console.log(balaced(num));
+  //console.log(balaced(char));
 }
 
 main();
@@ -213,9 +211,9 @@ function heightBST(tree) {
     right = heightBST(tree.right);
 
     if(left > right) {
-      return left + 1
+      return left + 1;
     } else {
-      return right + 1
+      return right + 1;
     }
   }
 };
@@ -250,18 +248,19 @@ function thirdNode(tree) {
   let curr = tree;
 
   while(curr.right !== null) {
-    curr = curr.right
+    curr = curr.right;
   }
 
   let parent = curr.parent;
   if(curr.left !== null && parent.left !== null) {
-    return parent.key
+    return parent.key;
   }
 
   if(parent.left !== null) {
     let newNode = parent.left;
+
     while(newNode.right !== null) {
-      newNode = newNode.right
+      newNode = newNode.right;
     }
     return newNode;
   }
@@ -272,8 +271,8 @@ function thirdNode(tree) {
 
 // #8
 function balaced(tree) {
-  let left = heightBST(tree.left)
-  let right = heightBST(tree.right)
+  let left = heightBST(tree.left);
+  let right = heightBST(tree.right);
 
   if(Math.abs(right - left) < 1) {
     return true;
@@ -285,8 +284,30 @@ function balaced(tree) {
 
 
 // #9
-function sameBST(tree) {
 
+const arr1 = [3, 5, 4, 6, 1, 0, 2];
+const arr2 = [3, 1, 5, 2, 4, 6, 0];
+
+const arr3 = [4, 5, 1, 0, 9, 7, 3];
+const arr4 = [0, 7, 3, 6, 2, 9, 8];
+
+function sameBST(arr1, arr2) {
+  if(arr1.length !== arr2.length) {
+    return false;
+  }
+
+  let array1 = arr1.sort(function(a, b) {return a-b});
+  let array2 = arr2.sort(function(a, b) {return a-b});
+
+  for(let i=0; i<array1.length; i++) {
+    if(array1[i] !== array2[i]) {
+      return false;
+    }
+  }
+  return true;
 };
+
+//console.log(sameBST(arr1, arr2));
+//console.log(sameBST(arr3, arr4));
 
 
