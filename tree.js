@@ -186,8 +186,9 @@ function main() {
   //console.log(IsitBST(char)); 
   //console.log(thirdNode(char)); 
   //console.log(thirdNode(num)); 
-  //console.log(balaced(num));
-  //console.log(balaced(char));
+  console.log(balaced(num));
+  console.log(balaced(char));
+
 }
 
 main();
@@ -216,6 +217,7 @@ function heightBST(tree) {
       return right + 1;
     }
   }
+
 };
 
 
@@ -237,8 +239,8 @@ function IsitBST(tree) {
       return false;
     }
   };
-
   return true;
+
 }; 
 
 
@@ -272,13 +274,18 @@ function thirdNode(tree) {
 // #8 Balanced BST
 function balaced(tree) {
   let left = heightBST(tree.left);
+  //console.log('left' + left);
   let right = heightBST(tree.right);
+  //console.log('right' + right);
 
   if(Math.abs(right - left) < 1) {
+    //console.log(true)
     return true;
-  } else if(Math.abs(right - left) > 1) {
+  } else if(Math.abs(right - left) >= 1) {
+    //console.log(false)
     return false;
   }
+
 };
 
 
@@ -304,9 +311,10 @@ function sameBST(arr1, arr2) {
     }
   }
   return true;
+
 };
 
-console.log(sameBST(arr1, arr2));
-console.log(sameBST(arr3, arr4));
+//console.log(sameBST(arr1, arr2));
+//console.log(sameBST(arr3, arr4));
 
 
